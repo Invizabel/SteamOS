@@ -28,12 +28,12 @@ if choice.lower() == "y":
     with open("/etc/systemd/system/pacman-update.service", "w") as file:
         file.write("[Unit]\nDescription=Update Arch Linux packages\n\n[Service]\nType=oneshot\nExecStart=/usr/bin/pacman -Syu --noconfirm")
 
-    os.system("sudo systemctl enable --now pacman-update.timer")
+    os.system("systemctl enable --now pacman-update.timer")
 
     with open("/etc/systemd/system/steam.service", "w") as file:
         file.write("[Unit]\nDescription=Steam Client Boot\n\n[Service]\nType=simple\nExecStart=/usr/bin/steam\nRestart=on-failure\nRestartSec=30\nUser=steamos\nEnvironment=DISPLAY=:0\n\n[Install]\nWantedBy=multi-user.target")
 
-    os.system("sudo systemctl enable steam.service")
+    os.system("systemctl enable steam.service")
 
 elif choice.lower() == "n":
     print("Please run this as root!")
