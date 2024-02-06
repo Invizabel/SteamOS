@@ -1,4 +1,9 @@
-# run this after archinstall, make sure you have git, steam, networkmanager, xorg-server, python, and nvidia (if applicable) already installed, choose systemd, and pipewire for audio please. Run this script as root and name the user "steamos"
+# run this after archinstall, make sure you have git, steam, networkmanager, iwd, xorg-server, python, and nvidia (if applicable) already installed, choose systemd, and pipewire for audio please. Run this script as root and name the user "steamos"
+# to connect to wifi use this:
+# 1) iwctl
+# 2) station wlan0 connect <ssid>
+# 3) exit
+
 import os
 
 os.system("clear")
