@@ -3,6 +3,7 @@
 # 1) iwctl
 # 2) station wlan0 connect <ssid>
 # 3) exit
+# 4) sudo nmcli device wifi connect <SSID> password <password>
 
 import os
 
@@ -13,7 +14,7 @@ if choice.lower() == "y":
     if choice == "y":
         os.system("nvidia-xconfig")
     
-    os.system("agetty -a steamos")
+    os.system("sudo agetty -a -n steamos")
     os.system("systemctl enable NetworkManager")
     os.system("systemctl start NetworkManager")
     os.system("pacman -Syu ntfs-3g")
