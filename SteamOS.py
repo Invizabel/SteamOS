@@ -34,7 +34,6 @@ if choice.lower() == "y":
         file.write("[Unit]\nDescription=Steam Client Boot\n\n[Service]\nType=simple\nExecStart=/usr/bin/steam\nRestart=on-failure\nRestartSec=30\nUser=steamos\nEnvironment=DISPLAY=:0\n\n[Install]\nWantedBy=multi-user.target")
 
     os.system("sudo systemctl enable steam.service")
-    os.system("reboot")
 
 elif choice.lower() == "n":
     print("Please run this as root!")
