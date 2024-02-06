@@ -1,10 +1,14 @@
-# run this after archinstall, make sure you have steam, networkmanager, xorg-server, python, and nvidia already installed, choose systemd, and pipewire for audio please. Run this script as root and name the user "steamos"
+# run this after archinstall, make sure you have steam, networkmanager, xorg-server, python, and nvidia (if applicable) already installed, choose systemd, and pipewire for audio please. Run this script as root and name the user "steamos"
 import os
 
 os.system("clear")
 choice = input("Are you running this script as root? y/n\n")
 if choice.lower() == "y":
-    #os.system("nvidia-xconfig")
+    choice = input("Are you using nvidia? y/n\n")
+    if choice == "y":
+        os.system("nvidia-xconfig")
+    
+    os.system("agetty -a steamos")
     os.system("systemctl enable NetworkManager")
     os.system("systemctl start NetworkManager")
     os.system("pacman -Syu ntfs-3g")
