@@ -1,4 +1,4 @@
-# run this after archinstall, make sure you have steam, networkmanager, xorg-server, and nvidia already installed, choose systemd, and pipewire for audio please. Run this script as root and name the user "steamos"
+# run this after archinstall, make sure you have steam, networkmanager, xorg-server, python, and nvidia already installed, choose systemd, and pipewire for audio please. Run this script as root and name the user "steamos"
 import os
 
 os.system("clear")
